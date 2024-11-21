@@ -46,8 +46,8 @@ function placeBees(board, totalBees, cols, rows) {
   let beesCounter = 0;
 
   while (beesCounter < totalBees) {
-    let i = Math.floor(random(0, rows));
-    let j = Math.floor(random(0, cols));
+    let i = Math.floor(Math.random() * rows);
+    let j = Math.floor(Math.random() * cols);
     if (board[i][j].bee == false) {
       board[i][j].bee = true;
       beesCounter++;
