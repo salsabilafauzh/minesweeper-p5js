@@ -112,8 +112,7 @@ function drawTile(tile) {
 
 function drawBeeTile(tile) {
   fill(125);
-  text('🚩', tile.x + tile.w * 0.5, tile.y + tile.w * 0.5);
-  //   ellipse(tile.x + tile.w * 0.5, tile.y + tile.w * 0.5, tile.w * 0.5);
+  text('💣', tile.x + tile.w * 0.5, tile.y + tile.w * 0.5);
 }
 
 function drawNumberTile(tile) {
@@ -153,6 +152,9 @@ function mousePressed() {
         reveal(board[i][j]);
         if (board[i][j].bee) {
           gameOver(board);
+        } else {
+          //tambahan dari salsa
+          gameWin(board, totalBees);
         }
       }
     }
@@ -161,7 +163,6 @@ function mousePressed() {
 
 function isUnderMouse(tile, x, y) {
   return x >= tile.x && x <= tile.x + tile.w && y >= tile.y && y <= tile.y + tile.w;
-  //TODO implement this function
 }
 
 function gameOver(board) {
@@ -169,6 +170,21 @@ function gameOver(board) {
     for (let j = 0; j < board[i].length; j++) {
       board[i][j].revealed = true;
     }
+  }
+}
+
+//tambahan dari salsa
+function gameWin(board, totalBees) {
+  let tileLeft = 0;
+  for (let i = 0; i < board.length; i++) {
+    for (let j = 0; j < board[i].length; j++) {
+      if (board[i][j].revealed == false) {
+        tileLeft++;
+      }
+    }
+  }
+  if (tileLeft == totalBees) {
+    alert("You're a WINNER!");
   }
 }
 

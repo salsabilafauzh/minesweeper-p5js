@@ -1,0 +1,39 @@
+html {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #1f61b7;
+  color: white;
+}
+
+.centerPage {
+  display: flex;
+  justify-content: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 1.5rem;
+}
+
+.resetButton {
+  cursor: pointer;
+  border: none;
+  width: 30%;
+  padding: 16px 24px;
+  border-radius: 20px;
+  background-color: rgb(199, 142, 67);
+  color: white;
+}
+
+.resetButton:hover {
+  background-color: rgb(255, 206, 143);
+  color: black;
+}
+
+canvas {
+  border: 1px solid black;
+}
